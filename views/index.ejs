@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>root2mymind</title>
+	<link rel="preload" href="/favicon.png" as="image">
+    <link rel="stylesheet" href="/styles.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="torch"></div>
+    <header>
+        <h1 id="focus"><img width="10%" src="/favicon.png">root2mymind</h1>
+        <% if (loggedIn) { %>
+            <form class="button" action="/logout" method="POST" style="display:inline;">
+                <button class="custom-btn-2" type="submit"><i class="fas fa-right-from-bracket"></i></button>
+            </form>
+        <% } else { %>
+                <a href="/login"><button class="custom-btn-2" type="submit"><i class="fas fa-user"></i></button></a>
+        <% } %>
+    </header>
+
+    <h2>
+        All Posts
+        <button class="custom-btn-2" onclick="filterPosts()">🔍</button>
+        <% if (loggedIn) { %>
+            <button id="add-post-btn" class="add-post-btn"><i class="fas fa-plus"></i></button>
+        <% } %>
+    </h2>
+
+    <% if (filterTag) { %>
+        <p>Filtering by tag: <strong><%= filterTag %></strong></p>
+        <button class="custom-btn-2" onclick="clearFilter()">Clear Filter</button>
+        <br />
+        <br />
+    <% } %>
+
+    <div id="add-post-form" class="hidden">
+        <h2>Create a New Post</h2>
+        <form action="/add-post" method="POST">
+            <input type="text" name="title" placeholder="Title" required><br>
+            <textarea name="content" placeholder="Content" required></textarea><br>
+            <input type="text" name="tags" placeholder="Tags (comma-separated)"><br>
+            <button type="submit">Submit</button>
+            <button type="button" id="cancel-btn">Cancel</button>
+        </form>
+    </div>
+
+    <div id="posts-container" class="gallery">
+        <% posts.forEach(post => { %>
+            <div class="post" onclick="window.location.href = '/post/<%= post.id %>'">
+                <h3><%= post.title %> <% post.tags.forEach(tag => { %>
+                        <span class="tag"><%= tag %></span>
+                    <% }) %></h3>
+				
+                <div class="post-content">
+                    <p class="post-preview"><%= post.content.substring(0, 100) %>...</p>
+                </div>
+                <div class="tags">
+                    
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <script>
+	
+		document.addEventListener('mousemove', function(e) {
+			const torch = document.getElementById('torch');
+			torch.style.left = `${e.pageX}px`;
+			torch.style.top = `${e.pageY}px`;
+		});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('focus');
+            header.classList.add('light-up');
+        });
+	
+        document.getElementById('add-post-btn').addEventListener('click', function() {
+            document.getElementById('add-post-form').classList.toggle('hidden');
+        });
+
+        document.getElementById('cancel-btn').addEventListener('click', function() {
+            document.getElementById('add-post-form').classList.add('hidden');
+        });
+
+        function filterPosts() {
+            const tag = prompt('Enter the tag to filter by:');
+            if (tag) {
+                window.location.href = `/?tag=${encodeURIComponent(tag)}`;
+            }
+        }
+
+        function clearFilter() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>
