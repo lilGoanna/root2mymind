@@ -1,20 +1,11 @@
 [
   {
-    "id": "1724976626115",
-    "title": "Test post",
-    "content": "This is a test.\r\n\r\nThis is a new line.\r\n\r\nOne more new line.\r\n.\r\nNew line after period.\r\nRegards,\r\n.\r\nMichael",
+    "id": "1725095040940",
+    "title": "Test Post",
+    "content": "So, I've created a blog.\r\n\r\nBlogging hasn't ever really been a dream of mine, but something about the environment it creates is exciting to me; the fact that everything I write is publicised adds an element of caution combined with mindfulness that I can't get from journaling. I mean, think of a journal - it's private, locked away from the world, free of judgement, and reserved in nature. The act of making something public induces feelings that yell, \"it better be something I'm at least somewhat proud of sharing.\"",
     "tags": [
-      "post"
+      "test"
     ],
-    "date": "30/08/2024"
-  },
-  {
-    "id": "1724976166541",
-    "title": "First Blog Post",
-    "content": "This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. \r\n\r\nThis is my first blog post. Wow! Here we go. \r\nThis is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. \r\n\r\nThis is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. \r\n\r\nThis is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. v\r\nThis is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. This is my first blog post. Wow! Here we go. ",
-    "tags": [
-      "life"
-    ],
-    "date": "30/08/2024"
+    "date": "31/08/2024"
   }
 ]
