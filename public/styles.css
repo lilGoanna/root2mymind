@@ -1,0 +1,309 @@
+/* Reset some basic elements */
+body, h1, h2, h3, p, form, input, button, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* Apply box-sizing to everything */
+* {
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Almost black background */
+    color: #e0e0e0; /* Light gray text */
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px; /* Increased max-width for better layout */
+    margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+    color: #ffffff; /* White */
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+	display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 36px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+
+.glow-text {
+	text-shadow: 0 0 40px rgba(255, 255, 255, 0.9); /* White glow effect */
+}
+
+.glow-img {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* White glow effect */
+    background-color: transparent; /* Ensures no background color */
+}
+
+
+.right-align {
+	display: flex !important;
+	justify-content: space-between !important;
+}
+
+
+
+/* Form styling */
+form {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #1e1e1e; /* Slightly lighter dark gray */
+    border: 1px solid #333; /* Dark border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Dark shadow */
+}
+
+form.button {
+	border: none;
+	padding: 0px;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333; /* Dark border */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #2a2a2a; /* Medium dark gray */
+    color: #e0e0e0; /* Light gray text */
+}
+
+/* Post styling */
+.post {
+    background-color: #1e1e1e; /* Slightly lighter dark gray */
+    padding: 20px;
+    border: 1px solid #333; /* Dark border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Dark shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    border-radius: 8px;
+}
+
+input, textarea, .post {
+    transition: background-color 0.3s ease;
+	transition: box-shadow 0.3s ease-out;
+	transition: filter 0.5 ease;
+}
+
+input:hover, textarea:hover, .post:hover, input:focus, textarea:focus, post:focus {
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);  White glow effect */
+    background-color: transparent; /* Ensures no background color */
+	color: white;
+	filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2)); /* White glow effect */
+}
+
+button {
+    background-color: #444; /* Dark gray button */
+    color: #acacac;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+	transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+	transition: box-shadow 0.5s ease-out;
+	transition: filter 0.5 ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);  White glow effect */
+    background-color: transparent; /* Ensures no background color */
+	color: white;
+	filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)); /* White glow effect */
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #262626; /* Dark gray button */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+	margin-right: 10px;
+}
+
+/* Buttons */
+.add-post-btn {
+	margin-left: 10px;
+}
+
+.add-post-btn:hover {
+	color: #00ff00;
+}
+
+.custom-btn-2{
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.custom-btn-2:hover {
+    background-color: #262626; /* Darker gray on hover */
+}
+
+
+/* Gallery layout for posts */
+#posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #ffffff; /* White text */
+}
+
+.post-content {
+    position: relative;
+}
+
+.post-preview {
+    display: block;
+}
+
+.post-full {
+    display: none;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 6px;
+    margin: 2px;
+    background-color: #2a2a2a; /* Slightly lighter gray than post */
+    color: #ffffff; /* White text */
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+/* Delete icon */
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #b3b3b3; /* Light gray */
+    transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+    color: #ffffff; /* White on hover */
+}
+
+
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333; /* Border under header */
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Post detail page */
+.post-detail {
+    background-color: #1e1e1e; /* Slightly lighter dark gray */
+    padding: 20px;
+    border: 1px solid #333; /* Dark border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Dark shadow */
+    margin: 20px 0;
+    position: relative;
+}
+
+.post-detail h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #ffffff; /* White text */
+}
+
+.post-detail p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0e0e0; /* Light gray text */
+}
+
+.post-date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #b3b3b3; /* Light gray */
+}
+
+@keyframes lightUp {
+    from {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0)); /* White glow effect */
+    }
+    to {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)); /* White glow effect */
+		background-color: transparent; /* Ensures no background color */
+    }
+}
+
+.light-up {
+    animation: lightUp 0.3s ease forwards;
+}
+
+#torch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1000; /* Ensure it stays on top */
+    box-shadow: 0 0 50px 10px rgba(255, 255, 255, 1); /* Soft glow around the torch */
+}
