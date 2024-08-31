@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %> - root2mymind</title>
+	<link rel="preload" href="/favicon.png" as="image">
+    <link rel="stylesheet" href="/styles.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="torch"></div>
+    <header>
+        <h1><img width="10%" src="/favicon.png">root2mymind</h1>
+        <% if (loggedIn) { %>
+            <form action="/logout" method="POST" style="display:inline;">
+                <button type="submit">Logout</button>
+            </form>
+        <% } else { %>
+                <a href="/login"><button class="custom-btn-2 type="submit"><i class="fas fa-user"></i></button></a>
+        <% } %>
+    </header>
+
+    <main>
+        <h2 class="right-align">
+            <a href="/"><button class="custom-btn-2 back-btn">< Back to Posts</button></a>
+        </h2>
+        <div class="post-detail">
+            <% if (loggedIn) { %>
+                <span class="delete-icon" onclick="confirmDelete('<%= post.id %>')">🗑️</span>
+            <% } %>
+            
+            <h2 class="right-align"><span id="focus"><%= post.title %></span> <div class="tags">
+                <% post.tags.forEach(tag => { %>
+                    <span class="tag"><%= tag %></span>
+                <% }) %>
+            </div></h2>
+            
+            <p><%- post.content.replace(/\r?\n/g, '<br>') %></p>
+
+            <div class="post-date"><%= post.date %></div> <!-- Display the date here -->
+        </div>
+    </main>
+
+    <script>
+		document.addEventListener('mousemove', function(e) {
+			const torch = document.getElementById('torch');
+			torch.style.left = `${e.pageX}px`;
+			torch.style.top = `${e.pageY}px`;
+		});
+	
+		document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('focus');
+            header.classList.add('light-up');
+        });
+	
+        function confirmDelete(postId) {
+            const password = prompt('Enter the password to delete this post:');
+            if (password) {
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/delete-post';
+                
+                const idInput = document.createElement('input');
+                idInput.type = 'hidden';
+                idInput.name = 'id';
+                idInput.value = postId;
+
+                const passwordInput = document.createElement('input');
+                passwordInput.type = 'hidden';
+                passwordInput.name = 'password';
+                passwordInput.value = password;
+
+                form.appendChild(idInput);
+                form.appendChild(passwordInput);
+                
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+    </script>
+</body>
+</html>

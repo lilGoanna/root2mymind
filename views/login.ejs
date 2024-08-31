@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+	<link rel="preload" href="/favicon.png" as="image">
+    <link rel="stylesheet" href="/styles.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="torch"></div>
+    <header>
+        <h1><img width="10%"src="/favicon.png">root2mymind</h1>
+    </header>
+	
+    <h2 class="glow-text"><a href="/"><button class="custom-btn-2 back-btn"><</button></a><span id="focus">Login</span></h2>
+	
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+	
+	 <script>
+		document.addEventListener('mousemove', function(e) {
+			const torch = document.getElementById('torch');
+			torch.style.left = `${e.pageX}px`;
+			torch.style.top = `${e.pageY}px`;
+		});
+	 
+		document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('focus');
+            header.classList.add('light-up');
+        });
+	</script>
+</body>
+</html>
