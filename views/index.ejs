@@ -51,15 +51,15 @@
     <div id="posts-container" class="gallery">
         <% posts.forEach(post => { %>
             <div class="post" onclick="window.location.href = '/post/<%= post.id %>'">
-                <h3><%= post.title %> <% post.tags.forEach(tag => { %>
-                        <span class="tag"><%= tag %></span>
-                    <% }) %></h3>
+                <h3><%= post.title %></h3>
 				
                 <div class="post-content">
                     <p class="post-preview"><%= post.content.substring(0, 100) %>...</p>
                 </div>
                 <div class="tags">
-                    
+                    <% post.tags.forEach(tag => { %>
+                        <span class="tag"><%= tag %></span>
+                    <% }) %>
                 </div>
             </div>
         <% }) %>

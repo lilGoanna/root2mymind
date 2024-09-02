@@ -14,11 +14,11 @@
     <header>
         <h1><img width="10%" src="/favicon.png">root2mymind</h1>
         <% if (loggedIn) { %>
-            <form action="/logout" method="POST" style="display:inline;">
-                <button type="submit">Logout</button>
+            <form class="button" action="/logout" method="POST" style="display:inline;">
+                <button class="custom-btn-2" type="submit"><i class="fas fa-right-from-bracket"></i></button>
             </form>
         <% } else { %>
-                <a href="/login"><button class="custom-btn-2 type="submit"><i class="fas fa-user"></i></button></a>
+                <a href="/login"><button class="custom-btn-2" type="submit"><i class="fas fa-user"></i></button></a>
         <% } %>
     </header>
 
